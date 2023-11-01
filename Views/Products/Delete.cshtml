@@ -1,0 +1,70 @@
+﻿@model BeWebApp.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn chắc muốn xóa sản phẩm này không?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NamePro)*@
+            Tên sản phẩm
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamePro)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Price)*@
+            Gía cả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ImagePro)*@
+            Hình ảnh
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ImagePro)" alt="@Html.DisplayFor(model => model.NamePro)" width="300" />
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Category1.NameCate)*@
+            Tên loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category1.NameCate)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DecriptionPro)*@
+            Mô tả
+        </dt>
+
+        <dd>
+            @Html.TextAreaFor(model => model.DecriptionPro)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

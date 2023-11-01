@@ -1,0 +1,61 @@
+﻿@model BeWebApp.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NamePro)*@
+           Tên sản phẩm
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamePro)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Price)*@
+            Gía cả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ImagePro)*@
+            Hình ảnh
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ImagePro)" alt="@Html.DisplayFor(model => model.NamePro)" width="300" />
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Category1.NameCate)*@
+            Tên loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category1.NameCate)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DecriptionPro)*@
+            Mô tả
+        </dt>
+
+        <dd>
+            @Html.TextAreaFor(model => model.DecriptionPro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
